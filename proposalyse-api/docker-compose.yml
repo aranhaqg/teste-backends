@@ -1,0 +1,24 @@
+version: '3'
+volumes:
+  proposalyse-db:
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - proposalyse-db:/var/lib/postgresql/data
+    ports:
+      - "5436:5432"
+  web:
+    tty: true
+    stdin_open: true
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/proposalyse
+    ports:
+      - "3005:3000"
+    depends_on:
+      - db

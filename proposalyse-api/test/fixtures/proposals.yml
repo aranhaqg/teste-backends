@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number_of_monthly_installments: 1
+  loan_value: 9.99
+  event: one
+
+two:
+  number_of_monthly_installments: 1
+  loan_value: 9.99
+  event: two
