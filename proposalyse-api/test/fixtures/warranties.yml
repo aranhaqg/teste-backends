@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_hash: MyString
+  value: 9.99
+  province: MyString
+  proposal: one
+
+two:
+  id_hash: MyString
+  value: 9.99
+  province: MyString
+  proposal: two
