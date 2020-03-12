@@ -3,8 +3,10 @@ class CreateEvents < ActiveRecord::Migration[5.2]
     create_table :events do |t|
       t.string :id_hash, null:false
       t.string :schema, null:false
-      t.integer :schema_id, null:false
+      t.integer :schema_id
       t.string :action, null:false
+      t.datetime :timestamp, null: false
+      t.references :proposal, foreign_key: true, null: false
 
       t.timestamps
     end
