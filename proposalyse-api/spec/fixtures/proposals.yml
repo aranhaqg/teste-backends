@@ -1,13 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
+  id_hash: 716de46f
   loan_value: 68397.00
   number_of_monthly_installments: 72
 
 two:
+  id: 2
+  id_hash: 716de46f
   loan_value: 2908382.00
   number_of_monthly_installments: 108
 
 tree:
+  id: 3
+  id_hash: 716de46f
   loan_value: 15000.00
   number_of_monthly_installments: 3

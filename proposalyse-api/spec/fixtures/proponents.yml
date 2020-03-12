@@ -1,17 +1,41 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  id_hash: MyString
-  name: MyString
+kevin:
+  id_hash: 'c2d06c4f'
+  name: 'Kevin'
   monthly_income: 9.99
-  age: 1
-  is_main: false
-  proposal: one
+  age: 37
+  is_main: true
+  proposal_id: 37
 
-two:
-  id_hash: MyString
-  name: MyString
+kate:
+  id_hash: '27179730'
+  name: 'Kate'
   monthly_income: 9.99
-  age: 1
+  age: 37
   is_main: false
-  proposal: two
+  proposal_id: 2
+
+randall:
+  id_hash: '0fe9465f'
+  name: 'Randall'
+  monthly_income: 9.99
+  age: 37
+  is_main: false
+  proposal_id: 2
+
+tobby:
+  id_hash: '7fe9465f'
+  name: 'Tobby'
+  monthly_income: 9.99
+  age: 19
+  is_main: true
+  proposal_id: 2
+
+tess:
+  id_hash: '465f7fe9'
+  name: 'Tess'
+  monthly_income: 9.99
+  age: 8
+  is_main: true
+  proposal_id: 2

@@ -4,10 +4,10 @@ one:
   id_hash: MyString
   value: 9.99
   province: MyString
-  proposal: one
+  proposal_id: one
 
 two:
   id_hash: MyString
   value: 9.99
   province: MyString
-  proposal: two
+  proposal_id: two
