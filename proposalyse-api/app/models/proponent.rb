@@ -1,4 +1,5 @@
-class Proponent < ApplicationRecord
 
-  validates :age, numericality: { greater_than: 18 }
+class Proponent < ApplicationRecord
+  belongs_to :proposal
+  validates :age, numericality: { greater_than_or_equal_to: 18 }
 end
