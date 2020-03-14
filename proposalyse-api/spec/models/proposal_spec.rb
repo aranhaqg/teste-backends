@@ -2,40 +2,38 @@ require 'rails_helper'
 
 RSpec.describe Proposal, type: :model do
   fixtures :proponents, :proposals, :warranties
-  let(:proposal) { proposals(:one) }
-  let(:warranties_set) { [Warranty.new] }
-  let(:proponents_set) { [proponents(:kevin)] }
+  let(:proposal) { proposals(:proposal_one) }
+  let(:warranties_set) { [warranties(:warranty_one), warranties(:warranty_tree)] }
+  let(:proponents_set) { [proponents(:kevin), proponents(:kate)] }
 
   before do
     proposal.proponents = proponents_set
     proposal.warranties = warranties_set
   end
 
-  describe '#loan value' do
-    it { should validate_presence_of(:loan_value) }
-    it { should validate_numericality_of(:loan_value).is_greater_than(30000) }
-    it { should validate_numericality_of(:loan_value).is_less_than(3000000) }
-  end
 
-  describe '#number_of_monthly_installments' do
-    it { should validate_numericality_of(:number_of_monthly_installments).is_greater_than(24) }
-    it { should validate_numericality_of(:number_of_monthly_installments).is_less_than(180) }
-  end
-
+  subject { proposal }
   describe '#warranties' do
-    context 'when have only no warranties' do
+
+    context 'when have less then one warranty' do
       let(:warranties_set) { [] }
 
       it { expect(proposal).to_not be_valid }
     end
 
-    context 'when have more than one warranty' do
-      let(:warranties_set) { [warranties(:one), warranties(:two)] }
+    context 'when have more than one warranty and their sum of their values' do
+      context 'is less than loan value' do
+        let(:warranties_set) { [warranties(:warranty_one), warranties(:warranty_two)] }
 
-      it { expect(proposal).to_not be_valid }
+        it { expect(proposal).to_not be_valid }
+      end
+
+      context 'is more or equals loan value' do
+        let(:warranties_set) { [warranties(:warranty_one), warranties(:warranty_tree)] }
+
+        it { expect(proposal).to be_valid }
+      end
     end
-
-
   end
 
   describe '#proponents' do

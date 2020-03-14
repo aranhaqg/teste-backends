@@ -6,7 +6,6 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.integer :schema_id
       t.string :action, null:false
       t.datetime :timestamp, null: false
-      t.references :proposal, foreign_key: true, null: false
 
       t.timestamps
     end

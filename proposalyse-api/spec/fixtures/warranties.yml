@@ -1,13 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  id_hash: MyString
-  value: 9.99
-  province: MyString
-  proposal_id: one
+warranty_one:
+  id: 1
+  id_hash: '316de46f'
+  value: 59000.00
+  province: 'CE'
+  proposal_id: 1
 
-two:
-  id_hash: MyString
+warranty_two:
+  id: 2
+  id_hash: '317de46f'
   value: 9.99
-  province: MyString
-  proposal_id: two
+  province: 'MyString'
+  proposal_id: 1
+
+warranty_tree:
+  id: 3
+  id_hash: '318de46f'
+  value: 1000.00
+  province: 'MyString'
+  proposal_id: 1
